@@ -1,4 +1,3 @@
-
 # 📊 Advanced Interactive Heart Disease Risk Dashboard
 import streamlit as st
 import pandas as pd
@@ -87,4 +86,21 @@ st.plotly_chart(fig)
 
 # Footer
 st.markdown("---")
-st.markdown("Developed by **Kajola Gbenga** | [LinkedIn](https://linkedin.com/in/kajolagbenga) | [GitHub](https://github.com/prodigy234)")
+st.markdown("# About the Developer")
+
+st.image("my_image.jpg", width=150)
+st.markdown("## **Kajola Gbenga**")
+
+st.markdown(
+    """
+\U0001F4C7 Certified Data Analyst | Certified Data Scientist | Certified SQL Programmer | Mobile App Developer | AI/ML Engineer
+
+\U0001F517 [LinkedIn](https://www.linkedin.com/in/kajolagbenga)  
+\U0001F4DC [View My Certifications & Licences](https://www.datacamp.com/portfolio/kgbenga234)  
+\U0001F4BB [GitHub](https://github.com/prodigy234)  
+\U0001F310 [Portfolio](https://kajolagbenga.netlify.app/)  
+\U0001F4E7 k.gbenga234@gmail.com
+"""
+)
+
+st.markdown("✅ Created using Python and Streamlit")
