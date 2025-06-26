@@ -88,7 +88,7 @@ st.plotly_chart(fig)
 st.markdown("---")
 st.markdown("# About the Developer")
 
-st.image("my_image.jpg", width=150)
+st.image("My image2.jpg", width=250)
 st.markdown("## **Kajola Gbenga**")
 
 st.markdown(
