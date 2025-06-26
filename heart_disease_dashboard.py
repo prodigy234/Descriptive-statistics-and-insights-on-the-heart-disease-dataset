@@ -13,6 +13,13 @@ from scipy.stats import ttest_ind
 st.set_page_config(page_title="Heart Disease Analytics Dashboard", layout="wide", page_icon="🫀")
 st.title("🫀 Advanced Heart Disease Risk Analysis Dashboard")
 
+"""
+An interactive Streamlit app for analyzing heart disease risk factors using patient data. 
+It features age-based filtering, visualizations (pie chart, histogram, heatmap), PCA dimensionality reduction, 
+and key health insights like BMI, cholesterol, and diabetes rate. Built for data exploration and health analytics.
+"""
+
+
 # Load Data
 @st.cache_data
 def load_data():
@@ -49,12 +56,16 @@ with col2:
     fig = px.histogram(filtered_df, x='Gender', color='Heart Disease Status', barmode='group', title='Gender vs Heart Disease')
     st.plotly_chart(fig)
 
+st.markdown("---")
+
 # Correlation Heatmap
 st.subheader("🔗 Feature Correlation")
 numeric_df = filtered_df.select_dtypes(include=np.number)
 fig, ax = plt.subplots(figsize=(12, 8))
 sns.heatmap(numeric_df.corr(), cmap='coolwarm', annot=False, ax=ax)
 st.pyplot(fig)
+
+st.markdown("---")
 
 # PCA Section
 st.subheader("📉 PCA - Dimensionality Reduction")
@@ -64,6 +75,8 @@ pca = PCA(n_components=5)
 pca_result = pca.fit_transform(scaled_data)
 explained = pca.explained_variance_ratio_
 st.bar_chart(pd.Series(explained, index=[f'PC{i+1}' for i in range(len(explained))]))
+
+st.markdown("---")
 
 # Insights
 st.subheader("💡 Key Insights")
@@ -77,6 +90,8 @@ with col2:
     st.metric("Heart Disease Rate", f"{filtered_df['Heart Disease Status'].value_counts(normalize=True).get('Yes',0)*100:.2f}%")
     st.metric("High Cholesterol Rate", f"{filtered_df['Cholesterol Level'].mean():.2f}")
     st.metric("Avg. Stress Level", filtered_df['Stress Level'].mode()[0] if not filtered_df['Stress Level'].mode().empty else "Unknown")
+
+st.markdown("---")
 
 # Advanced Visuals
 st.subheader("📊 Comparative Health Indicators")

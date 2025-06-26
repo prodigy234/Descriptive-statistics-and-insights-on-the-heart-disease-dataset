@@ -4,6 +4,10 @@ This project is a robust and interactive Streamlit dashboard that analyzes heart
 
 ---
 
+This Heart Disease Risk Analytics Dashboard which I built for advanced cardiovascular insights can be accessed live on Streamlit [Here](https://heartanalytics.streamlit.app/)
+
+---
+
 ## 📬 Author
 
 **Gbenga Kajola**
@@ -134,7 +138,7 @@ The dataset used for this dashboard contains patient medical and behavioral reco
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/prodigy234/heart-disease-dashboard.git
+    git clone https://github.com/prodigy234/Heart_Disease_Risk_Analysis_Dashboard.git
     cd heart-disease-dashboard
     ```
 
@@ -145,7 +149,7 @@ The dataset used for this dashboard contains patient medical and behavioral reco
 
 3. Launch the dashboard:
     ```bash
-    streamlit run app.py
+    streamlit run heart_disease_dashboard.py
     ```
 
 Make sure the `heart_disease.csv` file is in the same directory as your `heart_disease_dashboard.py` script.
